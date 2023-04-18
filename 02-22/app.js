@@ -25,3 +25,4 @@ console.log(combinedAges);
 // 56
 const combinedNames = combineVersion2("Baz", "Bob");
 console.log(combinedNames);
+// BazBob
