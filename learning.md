@@ -80,3 +80,9 @@ So you have an object type in an object type so to say.
 
 ### 02-19 Working with Tuples
 .
+
+### 02-20 Working with Enums
+.
+
+### 02-21 The "any" Type
+.
