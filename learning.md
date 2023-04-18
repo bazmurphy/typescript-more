@@ -98,3 +98,6 @@ So you have an object type in an object type so to say.
 
 ### 02-25 Type Alises & Object Types
 .
+
+### 02-26 Function Return Types & "void"
+.
