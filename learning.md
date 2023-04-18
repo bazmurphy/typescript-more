@@ -89,3 +89,6 @@ So you have an object type in an object type so to say.
 
 ### 02-22 Union Types
 .
+
+### 02-23 Literal Types
+.
