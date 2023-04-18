@@ -101,3 +101,15 @@ So you have an object type in an object type so to say.
 
 ### 02-26 Function Return Types & "void"
 .
+
+### 02-27 Functions as Types
+.
+
+### 02-28 Function Types & Callbacks
+.
+
+### 02-29 The "unknown" Type
+.
+
+### 02-30 The "never" Type
+.
