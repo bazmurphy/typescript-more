@@ -86,3 +86,6 @@ So you have an object type in an object type so to say.
 
 ### 02-21 The "any" Type
 .
+
+### 02-22 Union Types
+.
