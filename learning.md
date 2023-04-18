@@ -42,3 +42,6 @@ The core primitive types in TypeScript are all lowercase!
 ### 02-15 Type Assignment & Type Inference
 TypeScript has a built in feature called Type Inference
 It means that TypeScript does its best to understand which type of variable you have in a variable.
+
+### 02-16 Object Types
+.
