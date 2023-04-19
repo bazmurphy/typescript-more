@@ -184,7 +184,7 @@ this could be nice if you don't want to use TypeScript but want to take advantag
 `"declarationMap":`
 .d.ts are an advanced concept that matter if you are shipping your project as a library to other people and you need a manifest file that describes all the types you have in your project
 
-### 03-40
+### 03-40 Working with Source Maps
 Source map helps us with Debugging and Development
 What if we want to Debug our TypeScript code and not our Compiled JavaScript code?
 If we could see our TypeScript files in the browser (under Sources)
@@ -193,3 +193,26 @@ They act as a bridge which is understood by Modern Browsers and Developer Tools 
 To connect the .js files to the .ts files
 And so it simplifies Debugging because you can directly see the .ts files in the browser
 ![](/images/03-40-example.png)
+
+### 03-41 rootDir and outDir
+
+Typically you will have a `/src` folder that holds all the source code `.ts` files
+And a `/dist` folder that holds all the output the compiles `.js` files
+`rootDir` is where your source code should be
+`outDir` is where your compiled code should be
+
+`"rootDir": "./src",`
+`"outDir": "./dist",`
+(!) Subfolders and structure are also copied between the two
+
+`"removeComments": true,`
+this removes any comments in the `.ts` files so they don't exist in the compiled `.js` files
+
+`"noEmit": true,`
+this stops TypeScript from generating `.js` files altogether
+if you just want to check if your files are correct, but don't want to write all the output files
+you can set it to true to just have the TypeScript compiler check your files for any errors without actually creating the output file
+
+`"downlevelIteration": true,`
+this is an advanced option, for niche cases, where older versions of JavaScript and loops which don't work there
+it will output more verbose codeobs
