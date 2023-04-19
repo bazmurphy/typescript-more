@@ -113,3 +113,52 @@ So you have an object type in an object type so to say.
 
 ### 02-30 The "never" Type
 .
+
+---
+## The TypeScript Compiler (and its Configuration)
+
+### 03-36 Including & Excluding Files
+We can specifically tell TypeScript which files we want to EXCLUDE from the Compilation process:
+In `tsconfig.json` at the bottom:
+``` 
+"exclude": [
+  "otherfile1.ts", "otherfile2.ts",  // you can use wildcards
+  "*.dev.ts", // any file with that pattern in any folder will be ignored
+  "**/*.dev.ts", 
+  "node_modules" // but the most common setting is excluding node_modules
+]
+```
+but node_modules is excluded as a DEFAULT setting
+but if you add an "exclude" option then you NEED TO ADD node_modules ALSO.
+
+
+We can specifically tell TypeScript which files we want to INCLUDE in the Compilation process:
+In `tsconfig.json` at the bottom:
+```
+"include": [
+  // if we set the include key we have to INCLUDE EVERYTHING we want to COMPILE
+  "app.ts"
+]
+```
+(!) We MUST include EVERYTHING we want to Compile here
+
+(!) If we add some subfolder to EXCLUDE, then that will be FILTERED even if it part of INCLUDE.
+
+We COMPILE INCLUDE minus EXCLUDE
+
+We can also use "files" where you only specify which files you want to compile, it does not deal with FOLDERS
+This is an option for smaller projects
+"files": [
+  "app.ts"
+]
+
+### 03-37 Setting a Compilation Target
+`"compilerOptions": {`
+allows us to control HOW our Code is COMPILED
+
+`"target":`
+Which version of JavaScript you want to use to Compile the Code
+current default:
+`"target": "es2016",`
+can choose for example:
+`"target": "es2022",`
