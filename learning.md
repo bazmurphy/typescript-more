@@ -169,3 +169,17 @@ We can specify what libs we want to use
 `"lib": [],`
 And if we give it these libs, it is similar to default (uncommented):
 `"lib": ["ES2016", "DOM", "DOM.Iterable", "ScriptHost"],`
+
+### 03-39 More Configuration & Compilation Options
+`"allowJs":`
+you can include JavaScript files in the Compilation, it will be compiled by TypeScript even if it doesn't end in .ts
+`"checkJs":`
+it will not compile it but it will still check the Syntax and report potential Errors
+this could be nice if you don't want to use TypeScript but want to take advantage of some of it's features
+(!) you need to be careful to not DOUBLE COMPILE (where you are compiling a .ts to a .js and then it tries to compile the .js again)
+
+`"jsx":` is an option to help with React
+
+`"declaration":`
+`"declarationMap":`
+.d.ts are an advanced concept that matter if you are shipping your project as a library to other people and you need a manifest file that describes all the types you have in your project
