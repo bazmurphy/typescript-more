@@ -162,3 +162,10 @@ current default:
 `"target": "es2016",`
 can choose for example:
 `"target": "es2022",`
+
+### 03-38 Understanding TypeScript Core Libs
+When uncommented it defaults to a few options
+We can specify what libs we want to use
+`"lib": [],`
+And if we give it these libs, it is similar to default (uncommented):
+`"lib": ["ES2016", "DOM", "DOM.Iterable", "ScriptHost"],`
