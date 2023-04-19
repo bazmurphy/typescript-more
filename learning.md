@@ -183,3 +183,12 @@ this could be nice if you don't want to use TypeScript but want to take advantag
 `"declaration":`
 `"declarationMap":`
 .d.ts are an advanced concept that matter if you are shipping your project as a library to other people and you need a manifest file that describes all the types you have in your project
+
+### 03-40
+Source map helps us with Debugging and Development
+What if we want to Debug our TypeScript code and not our Compiled JavaScript code?
+If we could see our TypeScript files in the browser (under Sources)
+With the `"sourceMap": true,` we get `.js.map` files being generated.
+They act as a bridge which is understood by Modern Browsers and Developer Tools there
+To connect the .js files to the .ts files
+And so it simplifies Debugging because you can directly see the .ts files in the browser
