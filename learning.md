@@ -192,3 +192,4 @@ With the `"sourceMap": true,` we get `.js.map` files being generated.
 They act as a bridge which is understood by Modern Browsers and Developer Tools there
 To connect the .js files to the .ts files
 And so it simplifies Debugging because you can directly see the .ts files in the browser
+![](/images/03-40-example.png)
