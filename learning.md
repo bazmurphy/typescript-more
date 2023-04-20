@@ -224,3 +224,19 @@ this controls if you generate javascript files if you have an error
 if you set it to true then problematic files will not be generated
 if any file fails to compile no files will be "emitted"
 so you have to make sure you fix the error before TypeScript will compile files
+
+### 03-43 Strict Compilation
+`"strict": true,`
+enables ALL the strict options, setting it to true is the same as setting all the others to true
+`"noImplicitAny": true,`
+It ensures that we have to be clear about the types of values in our code
+TypeScript cannnot infer types sometimes
+`"strictNullChecks": false`
+They tell TypeScript to be pretty strict regarding working with values that potentially may hold a "null" value (such as a querySelector on an element that might not exist in the HTML)
+`"strictFunctionTypes": true,`
+This will fix niche bugs that you might not have in many applications, its related to Function Types you are setting up (in relation to Classes and Inheritance)
+`"strictBindCallApply": true,`
+That can be helpful if you work with .bind() .call() or .apply() and makes sure you are using in a way that works with your code.
+It checks on which function you are calling the above 3 methods on, and it checks if what you are setting up here makes sense.
+`"alwaysStrict": true,`
+makes sure the compiled JavaScript files are using "use strict"
