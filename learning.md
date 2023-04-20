@@ -216,3 +216,11 @@ you can set it to true to just have the TypeScript compiler check your files for
 `"downlevelIteration": true,`
 this is an advanced option, for niche cases, where older versions of JavaScript and loops which don't work there
 it will output more verbose codeobs
+
+### 03-42 Emitting Files on Compilation Errors
+the default is false
+`"noEmitOnError": true,`
+this controls if you generate javascript files if you have an error
+if you set it to true then problematic files will not be generated
+if any file fails to compile no files will be "emitted"
+so you have to make sure you fix the error before TypeScript will compile files
