@@ -240,3 +240,15 @@ That can be helpful if you work with .bind() .call() or .apply() and makes sure 
 It checks on which function you are calling the above 3 methods on, and it checks if what you are setting up here makes sense.
 `"alwaysStrict": true,`
 makes sure the compiled JavaScript files are using "use strict"
+
+### 03-44 Code Quality Options
+`"noUnusedLocals": true,`                           
+Enable error reporting when local variables aren't read.
+`"noUnusedParameters": true,`
+Raise an error when a function parameter isn't read.
+`"exactOptionalPropertyTypes": true,`
+Interpret optional property types as written, rather than adding 'undefined'.
+`"noImplicitReturns": true,`
+Enable error reporting for codepaths that do not explicitly return in a function.
+`"noFallthroughCasesInSwitch": true,`
+Enable error reporting for fallthrough cases in switch statements.
