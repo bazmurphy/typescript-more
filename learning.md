@@ -252,3 +252,6 @@ Interpret optional property types as written, rather than adding 'undefined'.
 Enable error reporting for codepaths that do not explicitly return in a function.
 `"noFallthroughCasesInSwitch": true,`
 Enable error reporting for fallthrough cases in switch statements.
+
+### 03-45 Debugging with Visual Studio Code
+.
