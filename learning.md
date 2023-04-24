@@ -1,6 +1,7 @@
 ## TypeScript
 
 ### 01-04 Installing & Using TypeScript
+
 initialise npm project  
 `npm init -y`  
 install typescript as dev dependency  
@@ -8,14 +9,14 @@ install typescript as dev dependency
 generate the tsconfig.json  
 `npx tsc --init`  
 run the compiler in watch mode  
-`npx tsc --watch` 
+`npx tsc --watch`
 
 ---
 
-`!` this value will never be null  
+`!` this value will never be null
 
 `as ~type~`  
-`as HTMLInputElement`  
+`as HTMLInputElement`
 
 example:  
 `const input1 = document.getElementById("num1")! as HTMLInputElement;`
@@ -23,33 +24,42 @@ example:
 ---
 
 ### 01-09 Project Setup
+
 .
 
 ### 02-11 Using Types
+
 .
 
 ### 02-12 TypeScript Types vs JavaScript Types
+
 The key difference is : JavaScript uses "dynamic types" (resolved at runtime), TypeScript uses "static types" (set during development).
 
 ### 02-13
+
 In TypeScript, you work with types like string or number all the time.
 Important: It is string and number (etc.), NOT String, Number etc.
 The core primitive types in TypeScript are all lowercase!
 
 ### 02-14 Working with Numbers, Strings & Booleans
+
 .
 
 ### 02-15 Type Assignment & Type Inference
+
 TypeScript has a built in feature called Type Inference
 It means that TypeScript does its best to understand which type of variable you have in a variable.
 
 ### 02-16 Object Types
+
 .
 
 ### 02-17 Nested Objects & Types
+
 Of course object types can also be created for nested objects.
 
 Let's say you have this JavaScript object:
+
 ```
     const product = {
       id: 'abc1',
@@ -61,7 +71,9 @@ Let's say you have this JavaScript object:
       }
     }
 ```
+
 This would be the type of such an object:
+
 ```
     {
       id: string;
@@ -73,73 +85,92 @@ This would be the type of such an object:
       }
     }
 ```
+
 So you have an object type in an object type so to say.
 
 ### 02-18 Array Types
+
 .
 
 ### 02-19 Working with Tuples
+
 .
 
 ### 02-20 Working with Enums
+
 .
 
 ### 02-21 The "any" Type
+
 .
 
 ### 02-22 Union Types
+
 .
 
 ### 02-23 Literal Types
+
 .
 
 ### 02-24 Type Aliases
+
 .
 
 ### 02-25 Type Alises & Object Types
+
 .
 
 ### 02-26 Function Return Types & "void"
+
 .
 
 ### 02-27 Functions as Types
+
 .
 
 ### 02-28 Function Types & Callbacks
+
 .
 
 ### 02-29 The "unknown" Type
+
 .
 
 ### 02-30 The "never" Type
+
 .
 
 ---
+
 ## The TypeScript Compiler (and its Configuration)
 
 ### 03-36 Including & Excluding Files
+
 We can specifically tell TypeScript which files we want to EXCLUDE from the Compilation process:
 In `tsconfig.json` at the bottom:
-``` 
+
+```
 "exclude": [
   "otherfile1.ts", "otherfile2.ts",  // you can use wildcards
   "*.dev.ts", // any file with that pattern in any folder will be ignored
-  "**/*.dev.ts", 
+  "**/*.dev.ts",
   "node_modules" // but the most common setting is excluding node_modules
 ]
 ```
+
 but node_modules is excluded as a DEFAULT setting
 but if you add an "exclude" option then you NEED TO ADD node_modules ALSO.
 
-
 We can specifically tell TypeScript which files we want to INCLUDE in the Compilation process:
 In `tsconfig.json` at the bottom:
+
 ```
 "include": [
   // if we set the include key we have to INCLUDE EVERYTHING we want to COMPILE
   "app.ts"
 ]
 ```
+
 (!) We MUST include EVERYTHING we want to Compile here
 
 (!) If we add some subfolder to EXCLUDE, then that will be FILTERED even if it part of INCLUDE.
@@ -149,10 +180,11 @@ We COMPILE INCLUDE minus EXCLUDE
 We can also use "files" where you only specify which files you want to compile, it does not deal with FOLDERS
 This is an option for smaller projects
 "files": [
-  "app.ts"
+"app.ts"
 ]
 
 ### 03-37 Setting a Compilation Target
+
 `"compilerOptions": {`
 allows us to control HOW our Code is COMPILED
 
@@ -164,6 +196,7 @@ can choose for example:
 `"target": "es2022",`
 
 ### 03-38 Understanding TypeScript Core Libs
+
 When uncommented it defaults to a few options
 We can specify what libs we want to use
 `"lib": [],`
@@ -171,6 +204,7 @@ And if we give it these libs, it is similar to default (uncommented):
 `"lib": ["ES2016", "DOM", "DOM.Iterable", "ScriptHost"],`
 
 ### 03-39 More Configuration & Compilation Options
+
 `"allowJs":`
 you can include JavaScript files in the Compilation, it will be compiled by TypeScript even if it doesn't end in .ts
 `"checkJs":`
@@ -185,6 +219,7 @@ this could be nice if you don't want to use TypeScript but want to take advantag
 .d.ts are an advanced concept that matter if you are shipping your project as a library to other people and you need a manifest file that describes all the types you have in your project
 
 ### 03-40 Working with Source Maps
+
 Source map helps us with Debugging and Development
 What if we want to Debug our TypeScript code and not our Compiled JavaScript code?
 If we could see our TypeScript files in the browser (under Sources)
@@ -218,6 +253,7 @@ this is an advanced option, for niche cases, where older versions of JavaScript 
 it will output more verbose codeobs
 
 ### 03-42 Emitting Files on Compilation Errors
+
 the default is false
 `"noEmitOnError": true,`
 this controls if you generate javascript files if you have an error
@@ -226,6 +262,7 @@ if any file fails to compile no files will be "emitted"
 so you have to make sure you fix the error before TypeScript will compile files
 
 ### 03-43 Strict Compilation
+
 `"strict": true,`
 enables ALL the strict options, setting it to true is the same as setting all the others to true
 `"noImplicitAny": true,`
@@ -242,7 +279,8 @@ It checks on which function you are calling the above 3 methods on, and it check
 makes sure the compiled JavaScript files are using "use strict"
 
 ### 03-44 Code Quality Options
-`"noUnusedLocals": true,`                           
+
+`"noUnusedLocals": true,`  
 Enable error reporting when local variables aren't read.
 `"noUnusedParameters": true,`
 Raise an error when a function parameter isn't read.
@@ -254,4 +292,15 @@ Enable error reporting for codepaths that do not explicitly return in a function
 Enable error reporting for fallthrough cases in switch statements.
 
 ### 03-45 Debugging with Visual Studio Code
+
+.
+
+### 03-47 Useful Resources & Links
+
+tsconfig Docs: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+Compiler Config Docs: https://www.typescriptlang.org/docs/handbook/compiler-options.html
+VS Code TS Debugging: https://code.visualstudio.com/docs/typescript/typescript-debugging
+
+### 04-48 Module Introduction
+
 .
